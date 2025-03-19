@@ -47,15 +47,13 @@ public class Main extends JavaPlugin implements Listener {
 
                         Vector direction = player.getLocation().toVector().subtract(event.getEntity().getLocation().toVector());
 
-                        // Réglage de la composante verticale
-                        direction.setY(verticalMotion);  // Composante verticale ajustée depuis config.yml
+                        direction.setY(verticalMotion);
 
-                        // Réglage de la force horizontale
-                        direction.normalize().multiply(horizontalMotion);  // Force horizontale ajustée depuis config.yml
+                        direction.normalize().multiply(horizontalMotion);
 
                         player.setVelocity(direction);
 
-                        player.damage(0);  // Le joueur prend les dégâts de la TNT, mais sans perdre de coeurs
+                        player.damage(0);
                         event.setCancelled(true);
                     }
                 }
@@ -68,7 +66,7 @@ public class Main extends JavaPlugin implements Listener {
         if (event.getCause() == EntityDamageEvent.DamageCause.BLOCK_EXPLOSION ||
                 event.getCause() == EntityDamageEvent.DamageCause.ENTITY_EXPLOSION) {
             if (event.getEntity() instanceof Player) {
-                event.setCancelled(false);  // Le joueur peut recevoir les dégâts mais pas perdre de coeurs
+                event.setCancelled(false);
             }
         }
     }
