@@ -1,8 +1,0 @@
-enabled: true
-horizontal: 3.0
-vertical: 0.90
-permission: false
-fall-damage:
-  enabled: false
-  damage: 1
-rayon: 8
